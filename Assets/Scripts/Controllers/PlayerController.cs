@@ -1,6 +1,9 @@
 using UnityEngine;
 using Mirror;
 using UnityEngine.UI;
+using MirrorBasics;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : NetworkBehaviour
 {
@@ -23,9 +26,14 @@ public class PlayerController : NetworkBehaviour
 
     private GameObject _camera;
 
+    private GameManager gameManager;
+
+    Player player;
+
     private void Awake()
     {
         _camera = Camera.main.gameObject;
+        player = GetComponent<Player>();
     }
 
     private void Start()
@@ -35,7 +43,65 @@ public class PlayerController : NetworkBehaviour
             healthSlider.maxValue = 100f;
             healthSlider.value = health;
         }
+
+        if (isServer)
+        {
+            SetRifleShootOff(false);
+        }
+        else
+        {
+            SetRifleShootOffClient(false);
+        }
+        player.OnSceneChangeSpawn += OnSceneChange;
     }
+
+    [Server]
+    void SetRifleShootOff(bool mode)
+    {
+        GetComponent<RifleShoot>().enabled = mode;
+    }
+
+    [Command]
+    void SetRifleShootOffClient(bool mode)
+    {
+        SetRifleShootOff(mode);
+    }
+
+    void OnSceneChange()
+    {
+        if (isServer)
+        {
+            SetRifleShootOff(true);
+        }
+        else
+        {
+            SetRifleShootOffClient(true);
+        }        
+    }
+
+    GameObject FindObjectByTagInAllScenes(string tag)
+    {
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+            GameObject[] rootObjects = scene.GetRootGameObjects();
+
+            foreach (GameObject root in rootObjects)
+            {
+                Transform[] children = root.GetComponentsInChildren<Transform>(true);
+                foreach (Transform child in children)
+                {
+                    if (child.CompareTag(tag))
+                    {
+                        return child.gameObject;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+
 
     private void Update()
     {

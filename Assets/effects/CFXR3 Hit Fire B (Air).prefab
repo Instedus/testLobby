@@ -9962,9 +9962,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 450605902
   serverOnly: 0
-  visibility: 0
+  visible: 2
+  m_AssetId: 56409ce317740724a8a1f13d71994e76
   hasSpawned: 0
 --- !u!1 &6484188613129301618
 GameObject:

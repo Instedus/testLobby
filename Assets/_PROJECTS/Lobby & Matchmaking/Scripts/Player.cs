@@ -21,13 +21,18 @@ namespace MirrorBasics {
 
         [SerializeField] GameObject playerLobbyUI;
 
-        [SerializeField] GameObject playerPrefab;
+        //[SerializeField] GameObject playerPrefab;
         bool isSpawned;
 
         Guid netIDGuid;
 
+        public event Action OnSceneChangeSpawn;
+
+        GameManager gameManager;
+
         void Awake () {
             networkMatch = GetComponent<NetworkMatch> ();
+            gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();           
         }
 
         private void Update()
@@ -231,13 +236,11 @@ namespace MirrorBasics {
             Debug.Log ($"MatchID: {matchID} | Beginning");
             //Additively load game scene
             SceneManager.LoadScene (2, LoadSceneMode.Additive);
+            OnSceneChangeSpawn?.Invoke();
+            gameManager.ammoText.gameObject.SetActive(true);
+            gameManager.gameObject.SetActive(true);
             //Thread.Sleep(1000);
             //Spawn();
         }
-
-        
-
-        
-
     }
 }

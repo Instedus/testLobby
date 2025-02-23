@@ -4820,7 +4820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 1799309954
   serverOnly: 0
-  visibility: 0
+  visible: 2
+  m_AssetId: aaea79571d3a4f64e885533407abe2ba
   hasSpawned: 0

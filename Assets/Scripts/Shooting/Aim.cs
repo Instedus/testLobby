@@ -38,6 +38,9 @@ public class Aim : NetworkBehaviour
 
     public void Update()
     {
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.enabled = true;
+
         if (_isinitied && isServer)
         {
             Vector3 wannaPos = (_target - transform.position).normalized;

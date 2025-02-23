@@ -5,8 +5,8 @@ using UnityEngine;
 
 public abstract class IShoot : NetworkBehaviour // main class for shooting
 {
-    protected IInputHandler inputHandler;
-    protected IReloader reloader;
+    protected IInputHandler inputHandler = new InputHandler();
+    protected IReloader reloader = new Reloader();
 
     protected void Awake()
     {

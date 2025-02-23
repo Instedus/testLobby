@@ -10,16 +10,21 @@ public class RifleShoot : IShoot
     [SerializeField] private int maxAmmo = 30;
     [SerializeField] private GameObject _bullet;
 
-    private GameManager gameManager;
+    public GameManager gameManager;
     private bool isReloadComplete = false;
 
-    private void Start()
+    private void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         UpdateAmmoUI();
         gameManager.reloadProgressSlider.value = reloadProgress;
-        gameManager.reloadProgressSliderGJ.gameObject.SetActive(false);        
+        gameManager.reloadProgressSliderGJ.gameObject.SetActive(false);
+        gameManager.ammoText.gameObject.SetActive(false);
+    }
+    private void Start()
+    {
+        gameManager.gameObject.SetActive(false);
     }
 
     private void Update()

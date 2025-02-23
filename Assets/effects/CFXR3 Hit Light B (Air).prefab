@@ -19979,7 +19979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 1741179300
   serverOnly: 0
-  visibility: 0
+  visible: 2
+  m_AssetId: 151de82792b31ef4fbc7cfaccbf4eec0
   hasSpawned: 0

@@ -10,10 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7003198475207685982}
   - component: {fileID: 4500773196311307276}
-  - component: {fileID: 6859219077318471319}
   - component: {fileID: 3272237343769661283}
   - component: {fileID: 2988856993779223799}
-  - component: {fileID: 2429632462420143867}
   - component: {fileID: 5924874500397317618}
   - component: {fileID: 7715895871201439231}
   m_Layer: 0
@@ -50,45 +48,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4887b033a84db814f9aa063d0c46fd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _hitPersonVHX: {fileID: 8771972552311404799, guid: 151de82792b31ef4fbc7cfaccbf4eec0, type: 3}
-  _hitWallVHX: {fileID: 2504214343621411470, guid: 56409ce317740724a8a1f13d71994e76, type: 3}
-  _destroyedOnAirVHX: {fileID: 7177991128484655659, guid: 1dcd1860109d7374caca25b7e43820a5, type: 3}
---- !u!114 &6859219077318471319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4162218018222826943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 1
-  syncMode: 0
-  syncInterval: 0
-  target: {fileID: 7003198475207685982}
-  syncPosition: 1
-  syncRotation: 1
-  syncScale: 0
-  onlySyncOnChange: 1
-  compressRotation: 1
-  interpolatePosition: 1
-  interpolateRotation: 1
-  interpolateScale: 1
-  coordinateSpace: 0
-  timelineOffset: 1
-  showGizmos: 0
-  showOverlay: 0
-  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  onlySyncOnChangeCorrectionMultiplier: 2
-  rotationSensitivity: 0.01
-  positionPrecision: 0.01
-  scalePrecision: 0.01
+  _hitPersonVHX: {fileID: 8771972552311404799, guid: 151de82792b31ef4fbc7cfaccbf4eec0,
+    type: 3}
+  _hitWallVHX: {fileID: 2504214343621411470, guid: 56409ce317740724a8a1f13d71994e76,
+    type: 3}
+  _destroyedOnAirVHX: {fileID: 7177991128484655659, guid: 1dcd1860109d7374caca25b7e43820a5,
+    type: 3}
 --- !u!114 &3272237343769661283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,9 +69,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 1622196330
   serverOnly: 0
-  visibility: 0
+  visible: 0
+  m_AssetId: 06c0289ec787d59428ef5fde5bc0bb6d
   hasSpawned: 0
 --- !u!212 &2988856993779223799
 SpriteRenderer:
@@ -158,39 +125,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2429632462420143867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4162218018222826943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec4f7556ca1e4b55a3381fc6a02b1bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 1
-  syncMode: 0
-  syncInterval: 0
-  target: {fileID: 7003198475207685982}
-  syncPosition: 1
-  syncRotation: 1
-  syncScale: 0
-  onlySyncOnChange: 1
-  compressRotation: 1
-  interpolatePosition: 1
-  interpolateRotation: 1
-  interpolateScale: 1
-  coordinateSpace: 1
-  timelineOffset: 1
-  showGizmos: 0
-  showOverlay: 0
-  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  onlySyncOnChangeCorrectionMultiplier: 2
-  rotationSensitivity: 0.01
-  positionPrecision: 0.01
-  scalePrecision: 0.01
 --- !u!50 &5924874500397317618
 Rigidbody2D:
   serializedVersion: 4
